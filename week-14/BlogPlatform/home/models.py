@@ -18,17 +18,13 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField()
     content = models.TextField()
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     publication_date = models.DateTimeField(auto_now_add=True)
-    categories = models.ManyToManyField(Category)
    
 
     def __str__(self):
         return self.title
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     
