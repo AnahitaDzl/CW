@@ -2,19 +2,16 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="mb-4 text-black-50">all posts</h1>
+        <!-- <h1 class="mb-4 text-black-50">all posts</h1> -->
         <div class="row">
-            {% for post in posts %}
                 <div class="col-md-8">
                 <div class="card-body">
-                        <a href="post_details/{{ post.id }}">
                         <h5 class="card-title">{{ post.title }}</h5>
-                        </a>
+                        <p class="card-text">{{ post.content }}</p>
                         <p class="card-text">Author: {{ post.author }}</p>
-                     
+                        <p class="card-text">Publish Date: {{ post.date }}</p>
                     </div>
                 </div>
-            {% endfor %}
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mb-4 text-black-50">all Categories</h1>
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-8">
+                <div class="card-body">
+                        <a href="category_details/{{ category.id }}">
+                                <h5 class="card-title">{{ category.name }}</h5>
+                                </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
